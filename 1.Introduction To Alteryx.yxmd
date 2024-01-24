@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="150" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Coffee_Tea_Sales.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="date" size="254" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_WString" />
+            <Field name="market_size" size="254" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_WString" />
+            <Field name="market" size="254" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_WString" />
+            <Field name="product_line" size="254" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_WString" />
+            <Field name="product_type" size="254" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_WString" />
+            <Field name="profit" size="254" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_WString" />
+            <Field name="sales" size="254" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_WString" />
+            <Field name="state" size="254" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_WString" />
+            <Field name="target_sales" size="254" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_WString" />
+            <Field name="type" size="254" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="282" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="date" selected="True" />
+            <Field field="market_size" selected="True" />
+            <Field field="market" selected="True" />
+            <Field field="product_line" selected="True" />
+            <Field field="product_type" selected="True" />
+            <Field field="profit" selected="True" />
+            <Field field="sales" selected="True" />
+            <Field field="state" selected="True" />
+            <Field field="target_sales" selected="True" />
+            <Field field="type" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="date" size="10" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="String" />
+            <Field name="market_size" size="12" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="String" />
+            <Field name="market" size="7" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="String" />
+            <Field name="product_line" size="6" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="String" />
+            <Field name="product_type" size="17" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_String" />
+            <Field name="profit" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="Int16" />
+            <Field name="sales" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="Int16" />
+            <Field name="state" size="13" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="V_String" />
+            <Field name="target_sales" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="Int16" />
+            <Field name="type" size="7" source="File: E:\Training-2024\1.Alteryx\Data\Coffee_Tea_Sales.csv" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="426" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[product_line] = "Tea" AND [sales] &gt; 500</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[product_line] = "Tea" AND [sales] &gt; 500</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="594" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Uppercase([product_type])" field="product_type" size="17" type="V_String" />
+            <FormulaField expression="[sales]*10" field="Sales 10 Times" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[product_type = Uppercase([product_type])
+Sales 10 Times = [sales]*10
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="714" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="date" selected="True" rename="Date" />
+            <SelectField field="profit" selected="True" rename="Profit" description="Please consider the profit column" />
+            <SelectField field="Sales 10 Times" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="834" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="sales" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>sales - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>1.Introduction To Alteryx</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="663aa8f8-8a92-41cb-a2a6-0325b1e15df9" />
+      <Telemetry>
+        <PreviousWorkflowId value="9476e818-7291-4a23-b7de-bc5c70aed8a4" />
+        <OriginWorkflowId value="9476e818-7291-4a23-b7de-bc5c70aed8a4" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
